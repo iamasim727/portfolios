@@ -1,0 +1,741 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+/* body{
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  /* min-height: 100vh; */
+  /* background: #343F4F;
+  /*  */
+  /* background-color: #343F4F;
+ } */
+ body{
+  /* background-color: black; */
+  /* background-color: aliceblue; */
+  background-color: white;
+ }
+  
+/* desining header and setting animation */
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self:center;
+  background-color: #343f4f;
+  /* background-color: #394352; */
+  /* width: 100%; */
+  height: 50vh;
+  
+}
+
+.header .static-txt{
+  color: #fff;
+  font-size: 6rem;
+  font-weight: 400;
+}
+.header .dynamic-txts{
+  /* margin-left: 15px;
+  height: 90px;
+  line-height: 90px; */
+  margin-left: 1.5rem;
+  height: 9rem;
+  line-height: 9rem;
+  overflow: hidden;
+}
+.dynamic-txts li{
+  list-style: none;
+  color: #FC6D6D;
+  /* font-size: 60px; */
+  font-size:6rem;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100%{
+    /* top: -360px; */
+    top: -36rem;
+  }
+}
+.dynamic-txts li span{
+  position: relative;
+  /* margin: 5px 0; */
+  margin: 0.5rem 0;
+  /* line-height: 90px; */
+  line-height: 9rem;
+}
+.dynamic-txts li span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #343F4F;
+  border-left: 2px solid #FC6D6D;
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
+  }
+}
+/* designing navbar */
+.wrapper .navbar{
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+.wrapper .navbar ul
+{
+
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    place-items: center;
+    /* grid-gap: 50px; */
+    grid-gap: 5rem;
+
+
+    
+}
+.wrapper .navbar::before{
+    content: "";
+    top: 0;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+
+    
+
+}
+.wrapper .navbar ul li{
+    list-style: none;
+    padding: 0.8rem;
+}
+.wrapper .navbar ul li a{
+    text-decoration: none;
+    color: #FC6D6D;
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 0.8rem;
+    cursor: pointer;
+}
+.navbar ul li a:hover{
+  background-color: rgba(180, 178, 178, 0.822);
+}
+/* designing about section*/
+#about-container{
+    /* width: 85%; */
+    /* min-height: 80vh; */
+    background-color: aliceblue;
+    /* position: absolute; */
+    /* background-color: white; */
+    /* box-shadow: 24px 24px 30px #6d8dad; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px 40px; */
+    padding: 2rem 4rem;
+    /* border-radius: 5px; */
+}
+.image-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.image-container img {
+    /* width: 500px; */
+    width: 50rem;
+    /* width: 700px; */
+    /* height: 500px; */
+    height: 50rem;
+    /* margin: 20px; */
+    margin: 2rem;
+    /* padding: 20px; */
+    /* border-radius: 10px; */
+    border-radius: 1rem;
+}
+.text-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    /* font-size: 22px; */
+    font-size: 2.2rem;
+}
+/* this section below is being used in about , resume , project */
+/* it is being used to design the headings like About,Resume,project */
+/* here .text-container h1 are used in about and resume and .first used in project*/
+.text-container h1,.first{
+    text-align: center;
+    /* font-size: 70px;
+    padding: 20px 0px; */
+    font-size: 7rem;
+    padding: 2rem 0;
+}
+/* this section below is being used in about , resume , project */
+/* it is being used to design the horizontal ruler in About,Resume,project */
+/* here .text-container h1 are used in about and resume and .first used in project*/
+.text-container hr,.first hr{
+  width: 100%;
+  /* height: 5px; */
+  height: 0.5rem;
+  position: relative;
+  top: 0px;
+  background-color: #FC6D6D;
+        animation-name: hr;
+        animation-duration: 5s;
+        animation-iteration-count:infinite;
+        animation-fill-mode:forwards;
+        animation-timing-function: ease-in-out;
+        position:relative;
+        left: 0;
+        border-radius: 10px;
+        border: 2px solid aliceblue;
+}
+@keyframes hr {
+from{
+  width: 0%;
+
+}
+to{
+  width: 100%;
+}
+
+  
+}
+/* this section below is alone used for about lets Talk atag */
+.text-container .a{
+    text-decoration: none;
+    /* padding: 12px;
+    margin: 10px 0px; */
+    padding: 1.2rem;
+    margin: 1rem 0;
+    background-color: rebeccapurple;
+    /* border: 2px solid transparent; */
+    border: 0.2rem solid transparent;
+    color: white;
+    /* border-radius: 5px;
+    font-size: 20px; */
+    border-radius: 0.5rem;font-size: 2rem;
+    transition: .3s all ease;
+}
+.text-container .a:hover{
+  transform: scale(1.2);
+}
+/* designing resume section */
+#resume-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 20px 40px; */
+  padding: 2rem 4rem;
+  min-height: 80vh;
+  background-color: aliceblue ;
+}
+.text-container{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 30px; */
+  margin: 3rem;
+
+}
+.resume{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 30px; */
+  margin: 3rem;
+}
+.resume iframe{
+  /* width: 600px;
+  height: 600px; */
+  width: 60rem;
+  height: 60rem;
+  /* border-radius: 10px; */
+  border-radius: 1rem;
+  /* border: 3px solid slategrey; */
+  border: 0.3rem solid slategrey;
+  box-sizing: border-box;
+}
+/* designing project section */
+#project-container{
+  background-color: aliceblue;
+  z-index: -1;
+}
+section{
+  display: grid;
+  place-content: center;
+  align-content: center;
+  min-height: 100vh;
+  /* color:black; */
+  z-index: -1;
+  
+
+}
+section .first{
+  display: grid;
+  place-content: center;
+  align-content: center;
+}
+/* h1{
+  display: grid;
+  place-content: center;
+  align-content: center;
+  /* min-height: 100vh; 
+  color:black;
+} */
+
+.hidden{
+  opacity: 0;
+  
+  transform: translateX(-100%);
+  filter: blur(5px);
+  transition: all 1s;
+  z-index: -1;
+  /* font-size: 22px; */
+  
+  
+}
+/* baware of proj as the same and similary name has been used in many times */
+/* this is the div which contains both image and code-here atag */
+.proj-img{
+  display: grid;
+  place-content: center;
+  align-content: center;
+  /* transition: .3s all ease; */
+}
+/* #project-container .proj-img{
+  width: 30rem;
+  height: 30rem;
+} */
+.show{
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0);
+}
+.logos {
+  display: flex;
+  z-index: -1;
+  /* flex-direction: row; */
+  
+}
+#project-container .logos img{
+  width: 20rem;
+  height: 20rem;
+  border: 0.2rem solid #FC6D6D;
+}
+/* .logo{
+  transform: translateX(-100%);
+  filter: blur(5px);
+  transition: all 1s;
+} */
+.logo :nth-child(1){
+  transition-delay : 200ms;
+}
+
+.logo :nth-child(2){
+  transition-delay : 400ms;
+}
+.logo :nth-child(3){
+  transition-delay : 600ms;
+}
+#project-container img{
+  z-index: -1;
+  
+  /* margin: 30px; */
+  margin: 3rem;
+ 
+  /* border-radius: 30px; */
+  border-radius: 3rem;
+}
+/* this code here is for code here atag */
+#project-container .code{
+  /* display: grid;
+  place-content: center;
+  align-content: center;
+  justify-content: center; */
+  align-items: center;
+  text-decoration: none;
+  /* padding: 12px; */
+  padding: 1.2rem;
+  /* margin: 10px 0px; */
+  margin: 1rem 0;
+  background-color: rebeccapurple;
+  /* border: 2px solid transparent; */
+  border: 0.2rem solid transparent;
+  color: white;
+  /* border-radius: 5px; */
+  border-radius: 0.5rem;
+  /* font-size: 20px; */
+  font-size: 2rem;
+  transition: .3s all ease;
+  /* width: 150px; */
+  width: 15rem;
+  text-align: center;
+}
+.proj-code{
+  display: grid;
+  place-content: center;
+  align-content: center;
+  transition: .3s all ease;
+}
+.btn
+{
+  display: grid;
+  place-content: center;
+  align-content: center;
+  transition: .3s all ease;
+}
+btn:hover{
+  transform: scale(1.2);
+  }
+/* the proj-code is a div which contain code atag */
+#project-container .proj-code:hover{
+transform: scale(1.2);
+}
+/* #project-container .project-para{
+  font-size: 22px;
+} */
+
+
+
+/* designing form section */
+#form-container{
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 20px 40px; */
+  padding: 2rem 4rem;
+  min-height: 85vh;
+  background-color: aliceblue ;
+}
+/* #form-container .text-container{
+  background-color: aliceblue;
+} */
+.text-container{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 30px; */
+  margin: 3rem;
+
+}
+.form{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin: 30px; */
+  margin: 3rem;
+}
+/* form interior */
+
+#form-container form{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+.input
+{
+    /* font-family: 'Freehand', cursive;
+    font-family: 'Roboto', sans-serif; */
+    font-size: large;
+    width: 100%;
+    /* height: 60px; */
+    height: 6rem;
+    /* margin: 10px; */
+    margin: 1rem;
+    /* padding-right: -50px; */
+    padding-right: -5rem;
+    text-align: center;
+    /* border: 2px solid #FC6D6D; */
+    border: 0.2rem solid #FC6D6D;
+    text-align: center;
+    /* border-radius: 5px; */
+    border-radius: 0.5rem;
+}
+textarea
+  {
+    /* font-family: 'Freehand', cursive;
+    font-family: 'Roboto', sans-serif; */
+    font-size: large;
+    width: 100%;
+    /* height: 60px; */
+    /* margin: 10px; */
+    margin: 1rem;
+    text-align: center;
+    /* border: 2px solid #FC6D6D; */
+    border: 0.2rem solid #FC6D6D;
+    text-align: center;
+    /* border-radius: 5px; */
+    border-radius: 0.5rem;
+}
+textarea :placeholder-shown{
+  text-align: center;
+}
+
+/* .main .btn{
+    display: block;
+    width:63%;
+    margin: auto;
+} */
+.btn{
+  text-decoration: none;
+  /* padding: 8px; */
+  padding: 0.8rem;
+  /* margin: 5px 0px 0px -15px; */
+  background-color: rebeccapurple;
+  /* border: 2px solid transparent; */
+  border: 0.2rem solid transparent;
+  color: white;
+  /* border-radius: 5px; */
+  border-radius: 0.5rem;
+  /* font-size: 20px; */
+  font-size: 2rem;
+  transition: .3s all ease;
+  /* width: 40%; */
+}
+.btn:hover{
+transform: scale(1.2);
+}
+
+
+#footer-container{
+background-color: #343f4f;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+/* padding: 20px 40px; */
+padding: 2rem 4rem;
+min-height: 10vh;
+background-color: #343f4f ;
+}
+#footer-container .text{
+  color: whitesmoke;
+  /* font-size: large; */
+  font-size: 2rem;
+  font-weight: 600 ;
+}
+#footer-container .social-media a
+{
+  /* padding: 10px; */
+  padding: 1rem;
+}
+#footer-container .social-media a img{
+  /* width: 50px; */
+  width: 5rem;
+  }
+
+
+  /* edit */
+  #footer-container .horizon{
+    display: flex;
+    flex-direction: row;
+    /* flex: 1; */
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+  #footer-container .social-media{
+    /* width: 50px; */
+    /* flex: 1; */
+  }
+    
+  .line
+  {
+    flex: 1;
+    /* background-color: whitesmoke; */
+    width: 100%;
+    height: 0.2rem;
+    position: relative;
+  animation-name: line;
+  animation-duration: 5s;
+  animation-iteration-count:infinite;
+  animation-fill-mode:forwards;
+  animation-timing-function: ease-in-out;
+  position:relative;
+  left: 0;
+  border-radius: 10px;
+  background-color: #FC6D6D;
+  border: 0.5px solid aliceblue;
+}
+@keyframes line {
+from{
+width: 0%;
+
+}
+to{
+width: 100%;
+}
+}
+
+
+
+
+/*   width: 100%;
+  /* height: 5px; */
+ /* height: 0.5rem;
+  position: relative;
+  top: 0px;
+  background-color: #FC6D6D;
+        animation-name: hr;
+        animation-duration: 5s;
+        animation-iteration-count:infinite;
+        animation-fill-mode:forwards;
+        animation-timing-function: ease-in-out;
+        position:relative;
+        left: 0;
+        border-radius: 10px;
+        border: 2px solid aliceblue;
+}
+@keyframes hr {
+from{
+  width: 0%;
+
+}
+to{
+  width: 100%;
+} */
+
+/* till here */
+
+p{
+  font-size: 2.2rem;
+}
+
+
+h2{
+  font-size: 2.8rem;
+}
+
+
+@media (max-width: 950px)
+{
+  html{
+    font-size: 55%;
+  }
+}
+
+
+@media (max-width: 850px)
+{
+  html{
+    font-size: 50%;
+  }
+}
+
+
+@media (max-width: 750px)
+{
+  html{
+    font-size: 47%;
+  }
+}
+
+
+
+@media (max-width: 750px)
+{
+  html{
+    font-size: 45%;
+  }
+  #resume-container,#form-container{
+    flex-direction: column;
+  }
+  #about-container{
+    flex-direction: column-reverse;
+  }
+}
+
+
+
+@media (max-width: 680px)
+{
+  html{
+    font-size: 43%;
+  }
+  #resume-container,#form-container{
+    flex-direction: column;
+  }
+  #about-container{
+    flex-direction: column-reverse;
+  }
+}
+
+
+
+@media (max-width: 650px)
+{
+  html{
+    font-size: 43%;
+  }
+#resume-container,#form-container{
+    flex-direction: column;
+  }
+  #about-container{
+    flex-direction: column-reverse;
+  }
+  #project-container .logos img{
+    width: 10.5rem;
+    height: 10.5rem;
+    border: 0.2rem solid #FC6D6D;
+  }
+}
+
+
+@media (max-width: 500px)
+{
+  html{
+    font-size: 38%;
+  }
+}
+
+
+@media (max-width: 420px)
+{
+  html{
+    font-size: 35%;
+  }
+}
+
+
+@media (max-width: 380px)
+{
+  html{
+    font-size: 33%;
+  }
+  #footer-conatiner .text{
+    font-weight: 300;
+  }
+}
